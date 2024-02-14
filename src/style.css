@@ -21,12 +21,21 @@ body{
         #search{
             display: flex;
             justify-content: space-between;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             #search_box{
                 font-size: larger;
                 padding: 10px 10px;
                 border-radius: 50px;
                 width: 80%;
+            }
+            #search_btn{
+                border-radius: 50%;
+                height: 3rem;
+                width: 3rem;
+                cursor: pointer;
+                .bx-search-alt-2{
+                    font-size: 1.4rem;
+                }
             }
         }
         #weather{
@@ -37,6 +46,12 @@ body{
             text-align: center;
             #weather_icon{
                 font-size: 5rem;
+            }
+            #temp{
+                margin-top: 1rem;
+            }
+            #city{
+                margin-bottom: 2rem;
             }
             #info{
                 display: flex;
