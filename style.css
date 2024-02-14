@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #main{
+        width: 40rem;
+        height: 30rem;
+        padding: 30px;
+        border: 1px solid;
+        border-radius: 5%;
+        display: flex;
+        flex-direction: column;
+        #search{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            #search_box{
+                font-size: larger;
+                padding: 10px 10px;
+                border-radius: 50px;
+                width: 80%;
+            }
+        }
+        #weather{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: center;
+            #info{
+                display: flex;
+                justify-content: space-between;
+                .info_col{
+                    width: 45%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
