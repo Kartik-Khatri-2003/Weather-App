@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
 
     <div id="main">
         <div id="search">
             <input type="text" id="search_box" placeholder="Enter city name">
-            <button id="search_btn">Search</button>
+            <button id="search_btn"><i class='bx bx-search'></i></button>
         </div>
 
         <div id="error">
@@ -19,13 +21,15 @@
         </div>
     
         <div id="weather">
-            <img src="./f.png" id="weather_icon" alt="Weather Icon" height="100px">
-            <h1 id="temp"></h1>
-            <h1 id="city"></h1>
+            <!-- <img src="/images/f.png" id="weather_icon"  height="100px"> -->
+            <i class='bx' id="weather_icon" alt="Weather Icon"></i>
+            <h1 id="temp">Temperature (°C)</h1>
+            <h1 id="city">City Name</h1>
 
             <div id="info">
                 <div class="info_col">
-                    <img src="./f.png" class="info_icon" alt="Humidity Icon" height="100px">
+                    <!-- <img src="/images/f.png" class="info_icon"  height="100px"> -->
+                    <i class='bx bx-water info_icon' alt="Humidity Icon"></i>
                     <div id="humidity_info">
                         <h3 id="humidity_percentage"></h3>
                         <h3 id="humidity_label">Humidity</h3>
@@ -34,7 +38,8 @@
                 </div>
         
                 <div class="info_col">
-                    <img src="./f.png" class="info_icon" alt="Wind Icon" height="100px">
+                    <!-- <img src="/images/f.png" class="info_icon"  > -->
+                    <i class='bx bx-wind info_icon' alt="Wind Icon"></i>
                     <div id="wind_speed_info">
                         <h3 id="wind_speed"></h3>
                         <h3 id="wind_label">Wind Speed</h3>
@@ -55,6 +60,7 @@
         const humidity = document.querySelector("#humidity_percentage");
         const windSpeed = document.querySelector("#wind_speed");  
         const error = document.querySelector( "#error");
+        
         
         error.style.display = "none";  // Hide the error message initially
 
@@ -90,15 +96,15 @@
                 cityName.innerHTML = data.name;
                 temp.innerHTML = Math.round(data.main.temp) + "°C";
                 humidity.innerHTML = data.main.humidity + "%";
-                windSpeed.innerHTML = data.wind.speed + " km/h"; 
+                windSpeed.innerHTML = Math.round(data.wind.speed) + " km/h"; 
 
                 function setWeatherIcon(temperature){
                 if(temperature >= 25){
-                   weatherIcon.src = "./e.jpg";
+                   weatherIcon.classList.add("bx-sun");
                 }else if(temperature >= 1 && temperature < 25 ){
-                   weatherIcon.src = "./k.jpg";
+                   weatherIcon.src = "/images/k.jpg";
                 }else {
-                   weatherIcon.src = "./f.png";
+                   weatherIcon.src = "/images/f.png";
                 }
                 }
 
