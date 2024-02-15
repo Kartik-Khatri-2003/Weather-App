@@ -48,22 +48,22 @@
             humidity.innerHTML = data.main.humidity + "%";
             windSpeed.innerHTML = Math.round(data.wind.speed) + " km/h"; 
 
-            /* function setWeatherIcon(icon) */
-            let icon = data.weather[0].main;
-            if(icon == "Clear"){
-               weatherIcon.classList.add("bxs-sun");
+           weatherIcon.className = "";
+           function setWeatherIcon(icon) {
+            if (icon == "Clear") {
+               weatherIcon.classList.add("bx", "bxs-sun");
             }else if(icon == "Clouds"){
-               weatherIcon.classList.add("bx-cloud");
+               weatherIcon.classList.add("bx","bx-cloud");
             }else if(icon == "Rain"){
-               weatherIcon.classList.add("bx-cloud-rain");
+               weatherIcon.classList.add("bx","bx-cloud-rain");
             }else if(icon == "Drizzle"){
-               weatherIcon.classList.add("bx-cloud-drizzle");
+               weatherIcon.classList.add("bx","bx-cloud-drizzle");
             }else if(icon == "Haze") {
-               weatherIcon.classList.add("bxs-cloud");
+               weatherIcon.classList.add("bx","bxs-cloud");
             }
-            
+            }           
 
-            /* setWeatherIcon(data.weather[0].main); */  
+            setWeatherIcon(data.weather[0].main);  
 
             error.style.display = "none";
             weather.style.display = "block"; 
