@@ -16,10 +16,12 @@
     const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
     // {units=metric} is used to specify the unit. {q=City Name} is used to define city name.
 
-    /* 
+    /*
        async function => is an asynchrnous function.
        it enables use of 'await' keyword inside a function tp pause execution of function until a promise is resolved or rejected.      
     */
+   
+       weather.style.display = "none";
 
     async function checkWeather(city){
         const response = await fetch(apiURL + city  + "&appid=" + apiKey);
@@ -33,11 +35,14 @@
 
             so the above line waits for fetch request to resolve before contine execution.
         */
+            
 
         if (response.status == 404) {
             error.style.display = "block";
             weather.style.display = "none";               
         } else {
+         
+           
             var data = await response.json();
             //waits for response to be converted to  json format before firther execution.
 
